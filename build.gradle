@@ -2,15 +2,20 @@
 buildscript {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'io.freefair.gradle-plugins:git-version:1.0.0'
     }
 }
+
+apply plugin: 'io.freefair.git-version'
 
 allprojects {
     repositories {
         jcenter()
         maven { url "https://jitpack.io" }
     }
+    version = rootProject.version
 }
